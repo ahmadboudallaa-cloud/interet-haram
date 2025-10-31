@@ -32,4 +32,10 @@ flex-direction:column;
   color: black;
   
 }
+@media(max-width:1050px){
 
+.btn2{
+    width: 25%;
+}
+
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/credit.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jaini+Purva&display=swap" rel="stylesheet">
+    <title>Interet@Haram</title>
+</head>
+<body>
+    <div class="navbar-brand text-center fs-1 ">
+        <a class="text-black" href="index.html">Interet@Haram</a>
+    </div>
+    <nav class="navbar container justify-content-center">
+    <ul class="nav justify-content-center fs-4 gap-5">
+  <li class="nav-item">
+    <a class="nav-link text-black" href="index.html">Accueil</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-black" href="credit.html">Credit</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-black" href="contact.html">Contact</a>
+  </li>
+  
+</ul>
+</nav>
+  
+
+
+
+
+
+
+ <div class="container py-5">
+    <h1 class="titre fs-2  text-center m-5"><b>Saisir les informations de votre<br> credit: </b></h1>
+
+    <div class="card shadow p-4">
+      <form id="Form">
+        <div class="mb-3">
+          <label for="type" class="form-label">Type de prêt</label>
+          <select id="type" class="form-select" required>
+            <option value="">-- Sélectionnez --</option>
+            <option value="maison">Maison</option>
+            <option value="appartement">Appartement</option>
+            <option value="terrain">Terrain</option>
+            <option value="entreprise">Petite entreprise</option>
+            <option value="personnel">Prêt personnel (cash)</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="Montant" class="form-label">Montant du prêt (DH)</label>
+          <input type="number" id="Montant" class="form-control" required min="1000">
+        </div>
+
+        <div class="mb-3">
+          <label for="Duree" class="form-label">Durée (en années)</label>
+          <input type="number" id="Duree" class="form-control" required min="1">
+        </div>
+
+        <div class="mb-3">
+          <label for="Salaire" class="form-label">Salaire mensuel (DH)</label>
+          <input type="number" id="Salaire" class="form-control" required min="0">
+        </div>
+
+        <button type="submit" class="btn d-flex justify-content-center fs-5 w-50"><b>Calculer</b></button>
+      </form>
+    </div>
+
+    
+    <div id="resulta" class="resulta-box card shadow mt-4 p-4">
+      <h4 class="text-center text-success mb-3">Résultat</h4>
+      <div id="resultaContent"></div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('Form');
+    const resultaBox = document.getElementById('resulta');
+    const resultaContent = document.getElementById('resultaContent');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const type = document.getElementById('type').value;
+      const montant = parseFloat(document.getElementById('Montant').value);
+      const duree = parseInt(document.getElementById('Duree').value);
+      const salaire = parseFloat(document.getElementById('Salaire').value);
+
+      if (!type || !montant || !duree || !salaire) return;
+
+      
+      let taux;
+      switch (type) {
+        case 'maison': taux = 4.35; break;
+        case 'appartement': taux = 4.5; break;
+        case 'terrain': taux = 5; break;
+        case 'entreprise': taux = 4.91; break;
+        case 'personnel': taux = 6.88; break;
+        default: taux = 4.0;
+      }
+
+     
+      const mensualRate = taux / 100 / 12;
+      const totalMonths = duree * 12;
+      const mensualite = montant * mensualRate / (1 - Math.pow(1 + mensualRate, -totalMonths));
+      const totalRembourse = mensualite * totalMonths;
+      const totalInterets = totalRembourse - montant;
+      const maxMensualite = salaire * 0.4;
+
+      if (mensualite > maxMensualite) {
+        resultaContent.innerHTML = `
+          <div class="alert alert-danger">
+        Votre mensualité (${mensualite.toFixed(2)} DH) dépasse 40% de votre salaire (${maxMensualite.toFixed(2)} DH).<br>
+            Le prêt n'est pas accessible avec ce revenu.
+          </div>
+        `;
+      } else {
+        resultaContent.innerHTML = `
+          <ul class="list-group">
+            <li class="list-group-item"><strong>Type de prêt :</strong> ${type}</li>
+            <li class="list-group-item"><strong>Montant demandé :</strong> ${montant.toFixed(2)} DH</li>
+            <li class="list-group-item"><strong>Taux appliqué :</strong> ${taux}%</li>
+            <li class="list-group-item"><strong>Mensualité :</strong> ${mensualite.toFixed(2)} DH</li>
+            <li class="list-group-item"><strong>Total des intérêts :</strong> ${totalInterets.toFixed(2)} DH</li>
+            <li class="list-group-item"><strong>Montant total à rembourser :</strong> ${totalRembourse.toFixed(2)} DH</li>
+          </ul>
+        `;
+      }
+
+      resultaBox.style.display = 'block';
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="card-footer">
+<h1 class="footer text-black text-center ">Interet@Haram</h1>
+<div class="f-image">
+<a href="https://www.whatsapp.com/?lang=fr" target="_blank">
+    <img class="f-image1" src="images/wha2-removebg-preview.png"  alt="">
+</a>
+<a  href="https://www.facebook.com/" target="_blank">
+    <img class="f-image2"  src="images/fac2-removebg-preview.png" alt="">
+</a>
+<a href="https://www.instagram.com/" target="_blank">
+    <img class="f-image3"  src="images/ins2-removebg-preview.png" alt="">
+</a>
+</div>
+</footer>
+
+</body>
+</html>

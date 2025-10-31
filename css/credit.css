@@ -1,0 +1,8 @@
+.card{
+    background-color: #3E92CC;
+    border: solid 5px ;
+}
+@media(max-width:1024px){
+    h1{width:90%;
+    }
+}

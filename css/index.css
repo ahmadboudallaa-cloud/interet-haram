@@ -11,6 +11,7 @@ a{
     background-color:#0A2463;
 }
 .navbar{
+    flex-direction: row;
     border: solid;
     width: 35%;
     background-color: #3E92CC;
@@ -131,5 +132,42 @@ height: auto;
  
 }
 
+@media(max-width:1250px){
+    .navbar{
     
+          width: 45%;
+    }
+    .card-footer h1{
+       width: 100%;
+    }
+  
+}
+   
+@media(max-width:1024px){
+    .navbar{
+        width:90% ;
+    }
+
+  .carte1{
+        width: 90%;
+        flex-direction: column;
+    }
+    .carte2{
+        width: 90%;
+        flex-direction: column;
+    
+    }
+    .btn{
+        width:25% ;
+  
+    }
+}
+
+
+
+    
+    
+
+
+
     
