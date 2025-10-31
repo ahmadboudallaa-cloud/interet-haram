@@ -6,3 +6,9 @@
     h1{width:90%;
     }
 }
+@media(max-width:376px){
+
+   h1{
+   width: 75%;
+   }
+}
