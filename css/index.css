@@ -1,3 +1,6 @@
+body{
+    background-color: #E5F8FF;
+}
 a{
     text-decoration: none;
 
@@ -18,26 +21,22 @@ a{
     background-color: #0A2463;
 }
  
-
-
-    .f-image {
+.f-image {
       display: flex;
       justify-content: center; 
       text-align: center;
       gap: 10px; 
       margin-top: 15px;
     }
-
-    .f-image a {
+.f-image a {
       display: inline-block;
     }
-
-    .f-image1 {
+.f-image1 {
       width: 40px;
       height: auto;
       
     }
-    .f-image2{
+.f-image2{
      width: 40px;
       height: auto;
     } 
@@ -45,5 +44,92 @@ a{
   width: 40px;
       height: auto;
 }
+.titre img{
+width: 50px;
+height: auto;
+
+}
+.trait {
+  width: 70%;
+  height: 5px;
+  background-color: #3E92CC;
+  margin-top: 100px ;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2px;
+}
+.carte-credit img{
+    width: 350px;
+    height: 200px;
+    border: 3px solid;
+    
+}
+.carte-credit{
+    display: flex;
+    flex-direction: column;
+     gap: 30px;
+    justify-content: center;
+    align-items: center; 
+    
+     
+ 
+   
+}
+.carte-credit p{
+    color: white;
+}
+.carte1{
+    text-align: center;
+    gap: 40px;
+}
+.carte2{
+    text-align: center;
+    gap: 30px;
+    justify-content: center;
+    
+    
+
+}
+.carte-credit1{
+    border: solid 4px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #3E92CC;
+}
+.carte-credit2{
+      border: solid 4px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #3E92CC;
+}
+.carte-credit3{
+      border: solid 4px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #3E92CC;
+}
+.carte-credit4{  border: solid 4px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #3E92CC;
+}
+.carte-credit5{
+      border: solid 4px;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #3E92CC;
+} 
+.btn{
+  
+    background-color: #3E92CC;
+    border-radius: 40px; 
+    width: 12%;
+   margin:40px auto;
+  
+    
+    
+ 
+}
+
     
     

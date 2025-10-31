@@ -1,0 +1,35 @@
+.contact{
+flex-direction:column;
+    gap: 50px;
+    align-items: center;
+    font-family: 'jaini purva';
+
+   
+}
+
+
+.contact input{
+
+    border: solid 3px;
+    border-radius: 35px;
+    width: 350px;
+    height: 50px;
+    max-height: 400px;
+   
+
+  
+}
+.message input{
+
+    height: 300px;
+}
+.btn2{
+    background-color: #3E92CC;
+    border-radius: 40px; 
+    width: 10%;
+   margin:40px auto;
+  justify-content: center;
+  color: black;
+  
+}
+
